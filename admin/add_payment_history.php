@@ -9,33 +9,6 @@ $err="<font color='blue'>Congrates New Room added </font>";
 
 ?>
 
-<script>
-function showLoanDetails(data)
-{
-
-if (window.XMLHttpRequest)
-{// code for IE7+, Firefox, Chrome, Opera, Safari
-xmlhttp=new XMLHttpRequest();
-}
-else
-{// code for IE6, IE5
-xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-}
-
-
-
-xmlhttp.onreadystatechange=function()
-{
-if (xmlhttp.readyState==4 && xmlhttp.status==200)
-{
-document.getElementById("loandetails").innerHTML=xmlhttp.responseText;
-}
-}
-//alert(data);
-xmlhttp.open("GET","show_group_ajax.php?loan_details="+data,true);
-xmlhttp.send();
-}
-</script>
 
 <h2 align="center" style="color:#00FFFF;text-decoration:underline">Add New Room</h2>
 <form method="post"  style=" color: white;">
