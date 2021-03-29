@@ -4,7 +4,7 @@ if(isset($save))
 {
 		mysqli_query($conn,"INSERT INTO `payment_history_room`( `name`, `budget`, `room_date`) VALUES ('$group','$amount',now())");
 		
-$err="<font color='blue'>Congrates New Room added </font>";
+$err="<font color='blue'>Congrats a New Room has been added </font>";
 }
 
 ?>

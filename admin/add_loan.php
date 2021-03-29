@@ -15,7 +15,7 @@ $r=mysqli_num_rows($sql);
 		{
 		mysqli_query($conn,"insert into loan values('','$group','$source','$amount','$intereset','$payment_term','$total_paid','$emi_per_month','$payment','$due')");
 		
-$err="<font color='blue'>Congrates Loan added to this category</font>";
+$err="<font color='blue'>Congrats a Loan has been added to this category</font>";
 		}
 		
 		else

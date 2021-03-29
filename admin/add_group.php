@@ -4,7 +4,7 @@ if(isset($save))
 {
 		mysqli_query($conn,"INSERT INTO `expense`(`name`, `cat_id`, `amount`, `expense_date`) VALUES ('$group','$category','$amount',now())");
 		
-$err="<font color='blue'>Congrates New Expense added </font>";
+$err="<font color='blue'>Congrats a New Expense has been added </font>";
 }
 
 ?>

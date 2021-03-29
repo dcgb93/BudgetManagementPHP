@@ -15,7 +15,7 @@ $r=mysqli_num_rows($sql);
 		{
 		mysqli_query($conn,"insert into goal values('','$fn','$ln','$gen','$group',now())");
 		
-$err="<font color='blue'>Congrates new goal added successfully</font>";
+$err="<font color='blue'>Congrats a new goal was added successfully</font>";
 		}
 		
 		else
