@@ -1,5 +1,5 @@
 <?php
-// $conn=mysqli_connect("127.0.0.1:3305","root","12345","budget_management");
+
 
 
 // $cleardb_url = parse_url(getenv("mysql://b7bb72b188e030:f338dec4@us-cdbr-east-03.cleardb.com/heroku_51f8455bb22f3af?reconnect=true"));
