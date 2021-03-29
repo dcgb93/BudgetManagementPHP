@@ -94,9 +94,9 @@ session_start();
                                         <?php echo @$err;?>
                                     </label>
                                 </div>
-                                <div class="text-center">
+                                <!-- <div class="text-center">
                                     <p style="color:white">Don't have an account? <a href="register.php" >Register Here</a></p>
-                                </div>
+                                </div> -->
 								
                                 
                             </fieldset>

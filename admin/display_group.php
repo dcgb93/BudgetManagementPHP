@@ -10,21 +10,21 @@ else
 {
 ?>
 <script>
-	function Deleteloan(id)
+	function DeleteExpense(id)
 	{
 		if(confirm("You want to delete this Record ?"))
 		{
-		window.location.href="delete_loan_record.php?id="+id;
+		window.location.href="delete_group.php?id="+id;
 		}
 	}
 </script>
-<h2 style="color:#00FFCC;text-decoration:underline" align="center">Budget (Expense Management)</h2>
+<h2 style="color:white;text-decoration:underline" align="center">Budget (Expense Management)</h2>
 
-<table class="table table-bordered" style="background-color: #f6f6f6;padding:5px">
+<table class="table table-bordered" style="background-color: rgba(27, 27, 50, 0.8); color: white;padding:5px">
 	<tr>
-		<form method="post" action="index.php?page=search_loan" >
+		<form method="post" action="index.php?page=search_group" >
 		<td colspan="7">
-		<select name="seachLoan" class="form-control" required>
+		<select name="searchGroup" class="form-control" required>
 			<option value="">Select category</option>
 			<?php 
 $q1=mysqli_query($conn,"select * from category");
@@ -36,21 +36,21 @@ echo "<option value='".$r1['cat_id']."'>".$r1['cat_name']."</option>";
 		</select>
 		</td>
 		<td colspan="5">
-		<input type="submit" value="Search Loan" name="sub" class="btn btn-success" />
+		<input type="submit" value="Search category" name="sub" class="btn btn-success" />
 		</td>
 		</form>
 	</tr>
 	<tr>
 		<td colspan="12">
 		
-		<a title="Add New Loan Records" href="index.php?page=add_loan"><span class="glyphicon glyphicon-plus"</a>
+		<a title="Add New Expense Records" href="index.php?page=add_group"><span class="glyphicon glyphicon-plus"</a>
 		&nbsp; &nbsp; 
 		
 		<!-- <a title="Print all Loan Records" href="print_loan_record.php"><span class="glyphicon glyphicon-print"</a> -->
 		
 		</td>
 	</tr>
-	<Tr class="active">
+	<Tr >
 		<th>Sr.No</th>
         <th>Expense Name</th>
         <th>Category Name</th>
@@ -65,7 +65,7 @@ echo "<option value='".$r1['cat_id']."'>".$r1['cat_name']."</option>";
          
          /* Get total number of records */
         
-		 $sql = "SELECT count(loan_id) FROM loan ";
+		 $sql = "SELECT count(expense_id) FROM expense ";
          $retval = mysqli_query($conn,$sql);
          
          if(! $retval )
@@ -85,7 +85,7 @@ echo "<option value='".$r1['cat_id']."'>".$r1['cat_name']."</option>";
          
 		 
          $left_rec = $rec_count - ($pagi * $rec_limit);
-         $sql = "SELECT * ". "FROM loan ".
+         $sql = "SELECT * ". "FROM expense ".
             "LIMIT $offset, $rec_limit";
             
          $retval = mysqli_query($conn, $sql);
@@ -116,9 +116,9 @@ echo "<td>".$row['expense_date']."</td>";
 
 ?>
 
-<Td><a href="javascript:Deleteloan('<?php echo $row['expense_id']; ?>')" style='color:Red'><span class='glyphicon glyphicon-trash'></span></a></td>
+<Td><a href="javascript:DeleteExpense('<?php echo $row['expense_id']; ?>')" style='color:Red'><span class='glyphicon glyphicon-trash'></span></a></td>
 
-<Td><a href="index.php?page=update_loan_record&loan_id=<?php echo $row['loan_id']; ?>" style='color:green'><span class='glyphicon glyphicon-edit'></span></a></td>
+<Td><a href="index.php?page=update_expense&expense_id=<?php echo $row['expense_id']; ?>" style='color:green'><span class='glyphicon glyphicon-edit'></span></a></td>
 
 
 
@@ -137,17 +137,17 @@ echo "<tr><td colspan='12'>";
 if( $pagi > 0 )
  {
          $last = $pagi - 2;
-      echo "<a href = \"index.php?page=display_loan&pagi=$last\">Last 10 Records</a> |";
-        echo "<a href = \"index.php?page=display_loan&pagi=$pagi\">Next 10 Records</a>";
+      echo "<a href = \"index.php?page=display_group&pagi=$last\">Last 10 Records</a> |";
+        echo "<a href = \"index.php?page=display_group&pagi=$pagi\">Next 10 Records</a>";
          
 		 }
 		 else if( $pagi == 0 )
 		  {
-     echo "<a href = \"index.php?page=display_loan&pagi=$pagi\">Next 10 Records</a>";
+     echo "<a href = \"index.php?page=display_group&pagi=$pagi\">Next 10 Records</a>";
          }
 		 else if( $left_rec < $rec_limit ) {
             $last = $pagi - 2;
-            echo "<a href = \"index.php?page=display_loan&pagi=$last\">Last 10 Records</a>";
+            echo "<a href = \"index.php?page=display_group&pagi=$last\">Last 10 Records</a>";
          }
         echo "</td></tr>"; 
 		?>

@@ -117,17 +117,17 @@ echo "<tr><td colspan='8'>";
 if( $pagi > 0 )
  {
          $last = $pagi - 2;
-      echo "<a href = \"index.php?page=display_member&pagi=$last\">Last 10 Records</a> |";
-        echo "<a href = \"index.php?page=display_member&pagi=$pagi\">Next 10 Records</a>";
+      echo "<a href = \"index.php?page=display_goal&pagi=$last\">Last 10 Records</a> |";
+        echo "<a href = \"index.php?page=display_goal&pagi=$pagi\">Next 10 Records</a>";
          
 		 }
 		 else if( $pagi == 0 )
 		  {
-     echo "<a href = \"index.php?page=display_member&pagi=$pagi\">Next 10 Records</a>";
+     echo "<a href = \"index.php?page=display_goal&pagi=$pagi\">Next 10 Records</a>";
          }
 		 else if( $left_rec < $rec_limit ) {
             $last = $pagi - 2;
-            echo "<a href = \"index.php?page=display_member&pagi=$last\">Last 10 Records</a>";
+            echo "<a href = \"index.php?page=display_goal&pagi=$last\">Last 10 Records</a>";
          }
         echo "</td></tr>"; 
 		?>

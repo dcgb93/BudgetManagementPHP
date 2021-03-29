@@ -25,13 +25,20 @@ $r=mysqli_num_rows($q);
    color:white;
  }
 </style>
- <h1 class="page-header">Dashboard</h1>
+ <h1 class="page-header" style='color:white; font-size:40px'>Dashboard</h1>
 		           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="placeholder">
             <?php 
-              echo$r;
+              // echo$r;
+
+              
+while($r1=mysqli_fetch_assoc($q))
+{
+echo "<h2 style='color:white; font-size:40px'>".$r1['income']."</h2>";
+}
               ?>
-              <h4>Total Income</h4>
+              
+              <h4 style='color:white; font-size:40px'>Total Income</h4>
               <!-- <span class="text-muted"><?php echo $r1; ?></span> -->
             </div>
             <!-- <div class="col-xs-6 col-sm-3 placeholder">

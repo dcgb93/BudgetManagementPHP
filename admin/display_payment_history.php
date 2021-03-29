@@ -10,7 +10,7 @@ else
 {
 ?>
 <script>
-	function Deleteloan(id)
+	function DeleteRoom(id)
 	{
 		if(confirm("You want to delete this Record ?"))
 		{
@@ -18,11 +18,11 @@ else
 		}
 	}
 </script>
-<h2 style="color:#00FFCC;text-decoration:underline" align="center">Housing Budget</h2>
+<h2 style="color:white;text-decoration:underline" align="center">Housing Budget</h2>
 
 <table class="table table-bordered" style="background-color: rgba(27, 27, 50, 0.8); color: white;">
 	<tr>
-		<form method="post" action="index.php?page=search_loan">
+		<form method="post" action="index.php?page=search_room">
 		<td colspan="4">
 		<input type="text" placeholder="Search Room" name="searchRoom" class="form-control"required />
 		</td>
@@ -56,7 +56,7 @@ echo "<option value='".$r1['cat_id']."'>".$r1['cat_name']."</option>";
 		<th>Sr.No</th>
 		<th>Room Name</th>
 		<th>Room Budget</th>
-		<th>Payment Date</th>
+		<th>Creation Date</th>
 		<th>Delete</th>
 		<th>Update</th>
 	</Tr>
@@ -118,9 +118,9 @@ echo "<td>".$row['room_date']."</td>";
 
 ?>
 
-<Td><a href="javascript:Deleteloan('<?php echo $row['payment_id']; ?>')" style='color:Red'><span class='glyphicon glyphicon-trash'></span></a></td>
+<Td><a href="javascript:DeleteRoom('<?php echo $row['room_id']; ?>')" style='color:Red'><span class='glyphicon glyphicon-trash'></span></a></td>
 
-<Td><a href="index.php?page=update_loan_record&loan_id=<?php echo $row['loan_id']; ?>" style='color:green'><span class='glyphicon glyphicon-edit'></span></a></td>
+<Td><a href="index.php?page=update_room&room_id=<?php echo $row['room_id']; ?>" style='color:green'><span class='glyphicon glyphicon-edit'></span></a></td>
 
 
 

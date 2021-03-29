@@ -126,9 +126,9 @@ html{
 			
 			}
 			
-			if($page=="update_group")
+			if($page=="update_expense")
 			{
-				include('update_group.php');
+				include('update_expense.php');
 			
 			}
 			if($page=="display_goal")
@@ -194,12 +194,24 @@ html{
 				include('add_payment_history.php');
 			
 			}
+			if($page=="update_room")
+			{
+				include('update_room.php');
+			
+			}
 			
 			if($page=="update_password")
 			{
 				include('update_password.php');
 			
 			}
+			if($page=="search_room")
+			{
+				include('search_room.php');
+			
+			}
+			
+
 			
 			
 			

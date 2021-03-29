@@ -2,7 +2,7 @@
 extract($_POST);
 if(isset($save))
 {
-		mysqli_query($conn,"insert into payment_history_room values('','$group','$amount',now())");
+		mysqli_query($conn,"INSERT INTO `payment_history_room`( `name`, `budget`, `room_date`) VALUES ('$group','$amount',now())");
 		
 $err="<font color='blue'>Congrates New Room added </font>";
 }
@@ -44,77 +44,27 @@ xmlhttp.send();
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4"><?php echo @$err;?></div>
 	</div>
-<!-- 	
-	<div class="row" style="margin-top:10px">
-		<div class="col-sm-4">Select Group</div>
-		<div class="col-sm-5">
-		<select name="group" onchange="showLoanDetails(this.value)" class="form-control" required>
-			<option value="">Select Group</option>
-			<?php 
-$q1=mysqli_query($conn,"select * from category");
-while($r1=mysqli_fetch_assoc($q1))
-{
-echo "<option value='".$r1['cat_id']."'>".$r1['cat_name']."</option>";
-}
-			?>
-		</select>
-		</div>
-	</div> -->
-	
+
 	<div class="row" id="loandetails">
 	<div class="row" style="margin-top:10px">
 		<div class="col-sm-4">Room Name</div>
 		<div class="col-sm-5">
+		<input type="text" name="group" class="form-control" required/></div>
+	</div>
+	
+	<div class="row" style="margin-top:10px">
+		<div class="col-sm-4">Room Budget</div>
+		<div class="col-sm-5">
 		<input type="text" name="amount" class="form-control" required/></div>
 	</div>
-	
-<!-- 	
-	
-	<div class="row" style="margin-top:10px">
-		<div class="col-sm-4">Loan Intereset(%)</div>
-		<div class="col-sm-5">
-		<input type="text" name="intereset" id="interest" readonly="true" class="form-control" required/></div>
-	</div>
-	
 
-	<div class="row" style="margin-top:10px">
-		<div class="col-sm-4">Term of Payment(In Year)</div>
-		<div class="col-sm-5">
-		<input type="text" readonly="true"  name="payment_term" id="payment_term" class="form-control" >
-			
-			
-		</div>
-	</div>
-	
-	<div class="row" style="margin-top:10px">
-		<div class="col-sm-4">Total Payment(With Intereset)</div>
-		<div class="col-sm-5">
-		<input type="text" readonly="true" id="total_paid" name="total_paid" class="form-control" readonly/></div>
-	</div>
-	
-	<div class="row" style="margin-top:10px">
-		<div class="col-sm-4">Pay Every Month(Emi Per Month)</div>
-		<div class="col-sm-5">
-		<input type="text" readonly="true" id="emi_per_month" name="emi_per_month" class="form-control" readonly/></div>
-	</div>
-	</div>
-	
-	
-	<div class="row" style="margin-top:10px">
-		<div class="col-sm-4">Enter Emi amount</div>
-		<div class="col-sm-5">
-		<input type="text" name="amount"  class="form-control"  required/>
-	
-		</div>
-	</div> -->
-	
 	
 	<div class="row" style="margin-top:10px">
 		<div class="col-sm-2"></div>
 		<div class="col-sm-8">
 		
 		
-<input type="submit" value="Add New Payment" name="save" class="btn btn-success"/>
+<input type="submit" value="Add New Room" name="save" class="btn btn-success"/>
 		<input type="reset" class="btn btn-success"/>
 		</div>
 	</div>
